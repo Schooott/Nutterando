@@ -8,15 +8,19 @@
   function boot() {
     const gate = document.getElementById("age-gate");
     const shell = document.getElementById("app-shell");
+
+    // Use inline styles so visibility never depends on the (cacheable) CSS file.
+    const showGate = () => { gate.hidden = false; gate.style.display = "grid"; shell.hidden = true; shell.style.display = "none"; };
+    const enterApp = () => { gate.hidden = true; gate.style.display = "none"; shell.hidden = false; shell.style.display = ""; };
+
     if (Store.isAgeConfirmed()) {
-      shell.hidden = false;
+      enterApp();
     } else {
-      gate.hidden = false;
+      showGate();
     }
     document.getElementById("age-confirm").addEventListener("click", () => {
-      Store.confirmAge();
-      gate.hidden = true;
-      shell.hidden = false;
+      try { Store.confirmAge(); } catch (e) {}
+      enterApp();
       render();
     });
     setupChrome();
