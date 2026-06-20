@@ -22,6 +22,10 @@
 
 * { box-sizing: border-box; }
 
+/* Ensure the `hidden` attribute always wins over component display rules
+   (e.g. .age-gate uses display:grid, which would otherwise override it). */
+[hidden] { display: none !important; }
+
 html, body { margin: 0; padding: 0; }
 
 body {
