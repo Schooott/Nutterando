@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nutterando — Marktplatz für Begleitung</title>
+  <meta name="description" content="Nutterando — diskreter Marktplatz für Begleitservice. Profile, Inserate, Bewertungen und sichere Kontaktaufnahme." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌹</text></svg>" />
+</head>
+<body>
+  <!-- Age gate -->
+  <div id="age-gate" class="age-gate" hidden>
+    <div class="age-gate__card">
+      <div class="age-gate__logo">🌹 Nutterando</div>
+      <h1>Bist du volljährig?</h1>
+      <p>
+        Diese Plattform enthält Inhalte für Erwachsene und richtet sich
+        ausschließlich an Personen ab <strong>18 Jahren</strong>. Mit dem
+        Betreten bestätigst du, dass du volljährig bist und die
+        <a href="#/legal">Nutzungsbedingungen</a> akzeptierst.
+      </p>
+      <div class="age-gate__actions">
+        <button class="btn btn--primary" id="age-confirm">Ich bin 18 oder älter — eintreten</button>
+        <a class="btn btn--ghost" href="https://www.google.com">Verlassen</a>
+      </div>
+      <p class="age-gate__note">
+        Demo-Anwendung. Alle Profile und Daten sind fiktiv und dienen nur zur Veranschaulichung.
+      </p>
+    </div>
+  </div>
+
+  <!-- App shell -->
+  <div id="app-shell" hidden>
+    <header class="header">
+      <div class="header__inner">
+        <a href="#/" class="brand" aria-label="Startseite">
+          <span class="brand__mark">🌹</span>
+          <span class="brand__name">Nutterando</span>
+        </a>
+
+        <nav class="nav" id="main-nav">
+          <a href="#/" data-route="/">Entdecken</a>
+          <a href="#/favorites" data-route="/favorites">Favoriten</a>
+          <a href="#/messages" data-route="/messages">Nachrichten <span class="badge-dot" id="msg-badge" hidden></span></a>
+          <a href="#/dashboard" data-route="/dashboard" data-role="provider">Mein Bereich</a>
+          <a href="#/safety" data-route="/safety">Sicherheit</a>
+        </nav>
+
+        <div class="header__right">
+          <div class="role-switch" id="role-switch" title="Demo: zwischen Kunden- und Anbieter-Ansicht wechseln">
+            <button data-role="customer" class="is-active">Kunde</button>
+            <button data-role="provider">Anbieter:in</button>
+          </div>
+          <button class="hamburger" id="hamburger" aria-label="Menü">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="view" class="view"></main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div>
+          <strong>🌹 Nutterando</strong>
+          <p>Diskreter Marktplatz für Begleitservice. Demo-MVP.</p>
+        </div>
+        <nav>
+          <a href="#/safety">Sicherheit &amp; Tipps</a>
+          <a href="#/legal">Rechtliches &amp; AGB</a>
+          <a href="#/about">Über Nutterando</a>
+        </nav>
+        <p class="footer__legal">
+          Nur für Erwachsene (18+). Diese Demo speichert alle Daten lokal in
+          deinem Browser. Es werden keine echten Personen dargestellt.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="modal-root"></div>
+
+  <script src="./js/store.js"></script>
+  <script src="./js/ui.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
