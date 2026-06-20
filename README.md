@@ -57,10 +57,13 @@ python3 -m http.server 8080
 
 ## 🌐 Live-Preview (GitHub Pages)
 
-Beim Push auf den Branch deployt der Workflow `.github/workflows/deploy.yml`
-automatisch nach GitHub Pages. Einmalig in den Repo-**Settings → Pages** als
-Quelle **„GitHub Actions"** auswählen. Die Preview-URL erscheint danach im
-Actions-Lauf und unter Settings → Pages.
+Live unter: **https://schooott.github.io/Nutterando/**
+
+Deployment via GitHub Pages mit Quelle **„Deploy from a branch"** → Branch
+`main` → `/ (root)`. Da der MVP komplett statisch im Repo-Root liegt
+(`index.html`), serviert GitHub die Seite direkt — bei jedem Push auf `main`
+wird automatisch neu deployt. Voraussetzung: das Repo ist **public** (oder ein
+bezahlter GitHub-Plan).
 
 ## 🗺️ Mögliche nächste Schritte
 
